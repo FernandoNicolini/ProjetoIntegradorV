@@ -1,4 +1,7 @@
 import { useState } from "react";
+import Receita from "../../../models/Receita/Receita";
+import { InputText } from "primereact/inputtext";
+import { Button } from "primereact/button";
 
 function CadastroReceita({ onNovaReceita }) {
   const [descricao, setDescricao] = useState("");

@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
-import { Button } from 'primereact/button';
-import { InputText } from 'primereact/inputtext';
+import { useState } from "react";
 
-function CadastroReceita({ 
-    onNovaReceita 
-}) {
+function CadastroReceita({ onNovaReceita }) {
+  const [descricao, setDescricao] = useState("");
+  const [formaPgto, setFormaPgto] = useState("");
+  const [valor, setValor] = useState("");
+  const [dataRecebimento, setDataRecebimento] = useState("");
 
- const [descricao, setDescricao] = useState('');
- const [formaPgto, setFormaPgto] = useState('');
- const [valor, setValor] = useState('');
- const [dataRecebimento, setDataRecebimento] = useState('');
-
- const adicionarReceita = () => {
+  const adicionarReceita = () => {
     const novaReceita = new Receita(
       Math.random().toString(), // Gerando um ID aleatorio como exemplo
       descricao,
@@ -20,25 +15,34 @@ function CadastroReceita({
       dataRecebimento
     );
     onNovaReceita(novaReceita);
-    setDescricao('');
-    setFormaPgto('');
-    setValor('');
-    setDataRecebimento('');
- };
+    setDescricao("");
+    setFormaPgto("");
+    setValor("");
+    setDataRecebimento("");
+  };
 
- return (
+  return (
     <div>
       <label>Descrição:</label>
-      <InputText value={descricao} onChange={(e) => setDescricao(e.target.value)} />
+      <InputText
+        value={descricao}
+        onChange={(e) => setDescricao(e.target.value)}
+      />
       <label>Forma de Pagamento:</label>
-      <InputText value={formaPgto} onChange={(e) => setFormaPgto(e.target.value)} />
+      <InputText
+        value={formaPgto}
+        onChange={(e) => setFormaPgto(e.target.value)}
+      />
       <label>Valor:</label>
       <InputText value={valor} onChange={(e) => setValor(e.target.value)} />
       <label>Data de Recebimento:</label>
-      <InputText value={dataRecebimento} onChange={(e) => setDataRecebimento(e.target.value)} />
+      <InputText
+        value={dataRecebimento}
+        onChange={(e) => setDataRecebimento(e.target.value)}
+      />
       <Button label="Adicionar Receita" onClick={adicionarReceita} />
     </div>
- );
+  );
 }
 
 export default CadastroReceita;

@@ -1,7 +1,6 @@
-import App from "./App";
 import * as React from "react";
 import ReactDOM, { createRoot } from 'react-dom/client'; // Importa de react-dom/client
-import { createBrowserRouter, RouterProvider, Route, Link } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Login } from "./app/tela_login/Login";
 import { LancamentoDespesa } from "./app/tela_lancamento_despesa/LancamentoDespesa";
 import { Home } from "./app/tela_home/Home";

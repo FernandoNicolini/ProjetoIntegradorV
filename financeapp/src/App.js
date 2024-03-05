@@ -1,19 +1,14 @@
 import React from "react";
 import GlobalStyle from "./styles/global";
 import { Header } from "./components/Header";
-import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
-import { Inicio } from "./app/tela_inicio";
 
 const App = () => {
-    return (
 
-        <Router>
-            <Routes>
-                <Route path="/Home" element={Inicio} />
-            </Routes>
+    return (
+        <div className="App">
             <Header />
             <GlobalStyle />
-        </Router>
+        </div>
     )
 }
 

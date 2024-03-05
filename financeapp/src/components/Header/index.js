@@ -3,10 +3,9 @@ import * as C from "./styles";
 import { FaSignOutAlt } from 'react-icons/fa';
 import { TransparentButton } from './styles';
 import logo from './logo.png';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
-    const handleInicioClick = () => { Navigate('/home') };
 
     return (
 
@@ -17,12 +16,12 @@ export const Header = () => {
             </div>
             <div>
 
-                <C.TransparentButton onClick={handleInicioClick}>
-                    <strong>Inicio</strong>
+                <C.TransparentButton>
+                    <Link to="/Home"><strong>Inicio</strong></Link>
                 </C.TransparentButton>
 
                 <C.TransparentButton>
-                    <strong>Despesas</strong>
+                    <Link to="/LancamentoDespesa"><strong>Despesas</strong></Link>
                 </C.TransparentButton>
 
                 <C.TransparentButton>

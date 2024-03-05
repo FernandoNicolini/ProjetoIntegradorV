@@ -1,19 +1,44 @@
 import App from "./App";
-
-import React from 'react';
-import ReactDOM from 'react-dom/client'; // Importa de react-dom/client
-
-
-// const root = createRoot(document.getElementById("root"));
-
-// root.render(<App />);
+import * as React from "react";
+import ReactDOM, { createRoot } from 'react-dom/client'; // Importa de react-dom/client
+import { createBrowserRouter, RouterProvider, Route, Link } from "react-router-dom";
+import { Login } from "./app/tela_login/Login";
+import { LancamentoDespesa } from "./app/tela_lancamento_despesa/LancamentoDespesa";
+import { Home } from "./app/tela_home/Home";
 
 
+// const router = createBrowserRouter([
+//     {
+//         path: "/",
+//         element: <Home />
+//     },
+//     {
+//         path: "LancamentoDespesa",
+//         element: <LancamentoDespesa />
+//     }
+// ]);
 
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Login />,
+        children: [
+            {
+                path: "/",
+                element: <Login />
+            },
+        ]
+    },
+    {
+        path: "LancamentoDespesa",
+        element: <LancamentoDespesa />
+    },
+    {
+        path: "Home",
+        element: <Home />
+    }
+]);
 
-const container = document.getElementById('root');
-const root = ReactDOM.createRoot(container);
-
-root.render(
-    <App />
+createRoot(document.getElementById("root")).render(
+    <RouterProvider router={router} />
 );
